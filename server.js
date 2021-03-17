@@ -1,7 +1,6 @@
 //Required Modules
 const express = require('express')
 const app = express()
-const methodOverride = require('method-override')
 const rowdy = require('rowdy-logger')
 //this sets up the DB connection
 require('./models')

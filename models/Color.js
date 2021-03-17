@@ -6,7 +6,7 @@ const shadeSchema = new mongoose.Schema({
     rgb: String,
     hsl: String,
     description: String
-}{
+}, {
     timestamps: true
 })
 
@@ -18,7 +18,7 @@ const colorSchema = new mongoose.Schema({
     hsl: String,
     position: String,
     shades: [shadeSchema]
-}{
+}, {
     timestamps: true
 })
 //embedded sub doc one:many relationship
@@ -26,8 +26,8 @@ const colorSchema = new mongoose.Schema({
 
 // step 2: generate the model
 
-const Color = mongoose.model('Color', ColorSchema)
-const Shade = mongoose.model('Shade', ShadeSchema)
+const Color = mongoose.model('Color', colorSchema)
+const Shade = mongoose.model('Shade', shadeSchema)
 
 //step 3: export it 
 module.exports = { Color, Shade }
