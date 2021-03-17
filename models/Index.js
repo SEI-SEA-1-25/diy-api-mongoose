@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 //Mongoose DB//
-const URL = process.env.MONGODB_URI || "mongodb://localhost/characterAPI";
+const URL = process.env.MONGODB_URI || "mongodb://localhost/buffydb";
 mongoose.connect(URL, {
   useNewUrlParser: true,
   useFindAndModify: false,

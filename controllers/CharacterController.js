@@ -1,6 +1,6 @@
 //Requirements//
 const router = require("express").Router();
-const Character = require("../models/Character");
+const { Character } = require("../models/Character");
 
 //CREATE//
 router.post("/", async (req, res) => {
@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
 //INDEX(read all)//
 router.get("/", async (req, res) => {
   try {
-    const allCharacters = await Characters.find({});
+    const allCharacters = await Character.find({});
     res.json(allCharacters);
   } catch (error) {
     console.log("👻 👻 👻", error);

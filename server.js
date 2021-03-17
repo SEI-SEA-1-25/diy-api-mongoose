@@ -11,7 +11,7 @@ require("./models");
 app.use(express.urlencoded({ extended: false }));
 
 //Controllers//
-app.use("/character", require("./controllers/CharacterController"));
+app.use("/characters", require("./controllers/CharacterController"));
 
 //PORT//
 const PORT = process.env.PORT || 3000;
