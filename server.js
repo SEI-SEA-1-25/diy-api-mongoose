@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
 
 // controllers
-app.use('/posts', require('./controllers/PostController'))
+app.use('/icecreams', require('./controllers/icecreamController'))
 
 // routes
 
