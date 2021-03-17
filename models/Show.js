@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const showSchema = new mongoose.Schema({
     title: String,
-    premiere: Integer,
+    premiere: Number,
     network: String
 })
 

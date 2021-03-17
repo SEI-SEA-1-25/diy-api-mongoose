@@ -1,4 +1,4 @@
-const router = require('express').router
+const router = require('express').Router()
 const Show = require('../models/Show')
 
 // Create
