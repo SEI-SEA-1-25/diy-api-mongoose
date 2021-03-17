@@ -11,7 +11,7 @@ const albumsController = require('./controllers/albumsController')
 //Middleware
 const rowdyResults = rowdy.begin(app)
 app.use(express.urlencoded({extended: false}))
-Mongoose.set('returnOriginal', false)
+
 
 
 //controllers

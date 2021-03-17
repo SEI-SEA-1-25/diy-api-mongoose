@@ -81,11 +81,13 @@ router.post('/:albumId/songs', async (req, res)=>{
 
 router.put('/:albumId', async (req, res) =>{
     try {
-     const updatedAlbum = await Album.findByIdAndUpdate({
-         _id: req.params.albumId, 
-         { title: req.body.title },
-     })   
-
+     const updatedAlbum = await Album.findByIdAndUpdate(
+         {_id: req.params.albumId}, 
+         {$set: {title: req.body.title, releaseYear: req.body.releaseYear} },
+         {new: true}
+     )   
+    res.json(updatedAlbum)
+    console.log(updatedAlbum)
     } catch (error) {
         console.log(error)
     }
@@ -95,11 +97,18 @@ router.put('/:albumId', async (req, res) =>{
 
 router.delete('/:albumId', async (req, res) =>{
     try {
-        
+        const deletedAlbum = await Album.findOneAndRemove({
+            _id: req.params.albumId
+        })
+        console.log(deletedAlbum)
+        res.json(deletedAlbum)
+    
     } catch (error) {
         console.log(error)
     }
 })
+
+
 
 
 
