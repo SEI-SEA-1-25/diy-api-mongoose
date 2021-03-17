@@ -13,11 +13,11 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         newColor = await Color.create({
-            name: String, 
-            hex: String,
-            rgb: String,
-            hsl: String,
-            position: String
+            name: req.body.name, 
+            hex: req.body.hex,
+            rgb: req.body.rgb,
+            hsl: req.body.hsl,
+            position: req.body.position
         })
         res.json(newColor)
     } catch(error) {
