@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
 // show one
 router.get('/:colorId', async (req, res) => {
     try {
-        const foundColor = await Color.findById(req.params.colorId)
+        const foundColor = await Color.findById(req.params.colorId).populate('shades')
         if(foundColor){
             res.json(foundColor)
         }
@@ -59,6 +59,41 @@ router.delete('/:colorId', async (req, res) => {
         const deletedColor = await Color.findByIdAndDelete(req.params.id)
         res.json(deletedColor)
     } catch(error) {
+        console.log(error)
+    }
+})
+
+//show all shades 
+
+router.get('/:colorId/shades', async (req, res) => {
+    try {
+        id = req.params.colorId
+        const color = await Color.findById(id).populate('shades')
+        res.json(color.shades)
+    } catch(error){
+        console.log(error)
+    }
+})
+
+//create shade
+router.post('/:colorId/shades', async (req, res) => {
+    try {
+        id = req.params.colorId
+        const color = await Color.findById(id).populate('shades')
+        if(color){
+            const newShade = await Shade.create({
+                name: req.body.name, 
+                hex: req.body.hex,
+                rgb: req.body.rgb,
+                hsl: req.body.hsl,
+                description: req.body.description
+            })
+            color.shades.push(newShade)
+            const updatedColor = await color.save()
+            res.json(updatedColor)
+        }
+        
+    } catch {
         console.log(error)
     }
 })
