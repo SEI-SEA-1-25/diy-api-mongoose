@@ -1,5 +1,5 @@
 require('./models')
-const Color = require('./models/Color')
+const { Color } = require('./models/Color')
 
 async function createColor() {
     try {

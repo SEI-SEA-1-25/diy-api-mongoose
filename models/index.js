@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 // Connect to MongoDB
-const URL = process.env.MONGODB_URI || 'mongodb://localhost/mongooseLesson'
+const URL = process.env.MONGODB_URI || 'mongodb://localhost/diyapimongoose'
 mongoose.connect(URL, {
     useNewUrlParser: true,
     useFindAndModify: false,

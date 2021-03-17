@@ -1,5 +1,6 @@
 const router = require('express').Router()
-const Color = require('../models/Color')
+const { Color } = require('../models/Color')
+
 //show all
 router.get('/', async (req, res) => {
     try {
