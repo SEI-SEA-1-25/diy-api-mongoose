@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.0",
+    "rowdy-logger": "^1.0.2"
+  },
+  "name": "diy-api-mongoose",
+  "description": "## **Deliverable**:",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlrightErin27/diy-api-mongoose.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlrightErin27/diy-api-mongoose/issues"
+  },
+  "homepage": "https://github.com/AlrightErin27/diy-api-mongoose#readme"
+}
